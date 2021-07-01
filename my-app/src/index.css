@@ -1,51 +1,91 @@
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
+    font: 15px normal;
     margin: 20px;
+    background-color:#f8f8f8;
+    
   }
   
-  ol, ul {
-    padding-left: 30px;
+  .background{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+    width: 735px;
+    height: 800px;
+    background-image: url(img/frame.png); 
+    background-repeat: no-repeat;
+  }
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+    height: 725px;
+    background-color:white;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 1px rgb(235, 234, 234);
+  }
+  .content {
+    padding-top: 25px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
   
-  .board-row:after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-  
-  .status {
-    margin-bottom: 10px;
-  }
-  
-  .square {
-    background: #fff;
-    border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
-  }
-  
-  .square:focus {
-    outline: none;
-  }
-  
-  .kbd-navigation .square:focus {
-    background: #ddd;
-  }
-  
-  .game {
+  .logo{
     display: flex;
-    flex-direction: row;
+    align-items: center; 
+  }
+  .logo-img{
+    width: 225px;
+    height: 25px;
+    text-align: left;
+    vertical-align: middle;
+  }
+  .logo-text{
+    width: 215px;
+    height: 50px;
+    text-align: left;
+    vertical-align: middle;
+    border-left: 2px solid rgb(208, 216, 226);
+    font-stretch: ultra-condensed;
+    box-sizing: border-box;
+    padding-left: 70px;
+  }
+  .fields{
+    font: 16px normal; 
+    font-weight:400;
+    margin-top: 25px;
+    line-height: 35px;
+    
+  }
+  .field-two{
+    display: flex;
+    justify-content: space-between; 
+  }
+
+  input{
+    border: 1px solid #cac1c1; 
+    border-radius: 3px; 
+    height: 30px; 
+    width:100%; 
+    padding:2px;
+    margin: 3px 0;
+    font-size: 11px; 
   }
   
-  .game-info {
-    margin-left: 20px;
+  input[type="submit"] {
+    font-size: 14px;
+    margin-top: 25px;
+    border:none;
+    background-color:#95e17a;
+    color:rgb(0, 0, 0);
+    font-weight:400;
+    height: 35px;
+    width:100%;
+  } 
+
+  .footer{
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    margin-top: 15px;
   }
-  
+

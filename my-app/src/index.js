@@ -5,17 +5,16 @@ import './index.css';
   class App extends React.Component {
     render() {
       return (
-        <div className="app">
             <div class = "wrapper">
-                <div class="background">
                     <div class="container">
                     <div class = "content">
                     <form action="" method ="">
                         <div class = "logo">
-                            <div class="logo-img">
+                            <div class="logo__img">
                                 <img src="logo.png" alt=""></img>
                             </div>
-                            <div class = "logo-text">
+                            <div class="dele"></div>
+                            <div class = "logo__text">
                                 Роботизированная разведка нефтяных месторождений
                             </div>
                         </div>
@@ -23,12 +22,12 @@ import './index.css';
                             <div class="field field-two">
                                 <label>
                                     Имя:
-                                    <input type="text" name="name">
+                                    <input type="text1" name="name">
                                     </input>
                                 </label>
                                 <label>
                                     Фамилия:
-                                    <input type="text" name="surname">
+                                    <input type="text2" name="surname">
                                     </input>
                                 </label>
                             </div>
@@ -74,8 +73,6 @@ import './index.css';
                 </footer>
                 </div>
                 </div>
-                </div>
-            </div> 
         </div>
     );
    }

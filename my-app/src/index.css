@@ -1,21 +1,23 @@
 * { 
   position: relative; 
   box-sizing: border-box; 
-} 
-body, html { 
-  height: 100%; 
-  margin: 0; 
-  padding: 0; 
-  width: 100%; 
-  background-color:#f8f8f8; 
-  font-family: 'Inter', sans-serif;
-  font-size:14px;
-}
+  } 
+
+  body, html { 
+    height: 100%; 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    background-color:#f8f8f8; 
+    font-family: 'Inter', sans-serif;
+    font-size:14px;
+  }
   
   #root{
     height: 100%;
     width: 100%;
   }
+
   .wrapper{
     display: flex;
     justify-content: center;
@@ -34,9 +36,10 @@ body, html {
     background-color:white;
     border-radius: 10px;
     box-shadow: 0 0 3px 1px rgb(235, 234, 234);
-    padding-top: 25px;
-    padding-left: 80px;
-    padding-right: 80px;
+  }
+
+  .form{
+    margin: 25px 80px 0px 80px;
   }
 
   .logo{
@@ -46,38 +49,44 @@ body, html {
     width: 100%;
     height: 45px;
   }
-  .logo__img{
+
+  .logo .logo__img{
     width: 100%;
     text-align: left;
     vertical-align: middle;
   }
-  .logo__text{
+
+  .logo .logo__text{
     width: 100%;
     text-align: left;
     vertical-align: middle;
     line-height: 14px;
-    font-stretch: ultra-condensed;
     box-sizing: border-box;
     padding-left: 35px;
   }
+
   .divisor{
     height: 42px;
     width: 1px;
     border-left: 2px solid rgb(208, 216, 226);
   }
+
   .fields{
     font-weight:400;
     padding-top: 25px;
     line-height: 35px;
   }
-  .fields__item-two{
+  
+  .fields .fields__item.fields__item-two{
     display: flex;
     justify-content: space-between; 
   }
-  .fields__item-first{
+
+  .fields .item-first{
     width: 170px;
   }
-  .fields__item-second{
+  
+  .fields .item-second{
     width: 173px;
   }
 
@@ -95,16 +104,14 @@ body, html {
     border:none;
     background-color:#95e17a;
     color:rgb(0, 0, 0);
-    font-weight:400;
     height: 40px;
     width:100%;
-    font-size: 14px;
   } 
 
   .bottom{
     display: flex;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
   .footer{
@@ -112,3 +119,19 @@ body, html {
     top:95%
   }
 
+  .error{
+    border-color: red;
+  }
+
+  .globalError{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: red;
+    position:absolute;
+    width: 100%;
+    bottom: 0;
+    height: 32px;
+    
+  }

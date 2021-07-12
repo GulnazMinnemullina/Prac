@@ -1,4 +1,9 @@
 import * as React from 'react';
+import { Logo } from '../logo/index';
+import { isEmpty, isInvalidEmail, isInvalidString, isInvalidPassword, isInvalidPasswordConf } from '../../helpers/validation'
+
+require("./index.css");
+
 export const Registration = () => {
 
     const [name, setName]=React.useState('');
@@ -17,30 +22,7 @@ export const Registration = () => {
 
     const [globalError, setGlobalError]=React.useState('');
     
-    const isEmpty = (value) => {
-        return (value.length === 0 || !value.trim());
-    }
-    
-    const isInvalidString = (value) => {
-        const re = /^[а-яА-Яa-zA-z]+$/;
-        return (!re.test(String(value).toLowerCase()))
-    }
-
-    const isInvalidEmail = () => {
-        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return (!re.test(String(email).toLowerCase()));
-    }
-
-    const isInvalidPassword = () => {
-        return (password.length < 3 || password.length > 8);
-    }
-    
-    const isInvalidPasswordConf = () => {
-        return (password!==passwordConf);
-    }
-
     const onClickByRegistration = () => {
-        console.log('onClick');
         setNameDirty(isEmpty(name));
         setSurnameDirty(isEmpty(surname));
         setEmailDirty(isEmpty(email));
@@ -52,15 +34,15 @@ export const Registration = () => {
         {
             setGlobalError('Имя и Фамилия могут содержать только строковые символы')
         }
-        else if (isInvalidEmail())
+        else if (isInvalidEmail(email))
         {
             setGlobalError('E-mail указан неверно');
         }
-        else if (isInvalidPassword())
+        else if (isInvalidPassword(password))
         {
             setGlobalError('Пароль должен состоять из 3-8 символов');
         }
-        else if (isInvalidPasswordConf())
+        else if (isInvalidPasswordConf(password, passwordConf))
         {
             setGlobalError('Пароли не совпадают');
         }
@@ -69,15 +51,7 @@ export const Registration = () => {
     return (
     <>
         <div class="form">
-            <div class = "logo">
-                <div class="logo__img">
-                    <img src="logo.png" alt=""></img>
-                </div>
-                <div class="divisor"></div>
-                <div class = "logo__text">
-                    Роботизированная разведка нефтяных месторождений
-                </div>
-            </div>
+            <Logo/>
             <div class = "fields">
                 <div class="fields__item fields__item-two">
                     <div class = "item-first">
@@ -140,11 +114,12 @@ export const Registration = () => {
                 <img src="Mail.png" alt=""></img>
                 <a href="#">Написать разработчикам</a>
             </div>
-        </div>   
+        </div>
+
         {
             globalError ? <div class = "global-error"><img src ="error.png" alt=""></img>
                 {globalError} </div> : null
         }
-</>
+    </>
     )
 }
